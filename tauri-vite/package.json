@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@tauri-apps/api": "^1.0.2",
+    "element-plus": "^2.2.32",
     "vue": "^3.2.25"
   },
   "devDependencies": {

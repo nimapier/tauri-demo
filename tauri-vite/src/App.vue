@@ -1,16 +1,73 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+import { ref } from 'vue';
 import HelloWorld from './components/HelloWorld.vue'
+const list = ref( [
+          {
+            icon: 'el-icon-microphone',
+            check: true,
+            title: '语音权限',
+            subtitle: '紧急情况，录音取证'
+          },
+          {
+            icon: 'el-icon-map-location',
+            check: true,
+            title: '位置权限',
+            subtitle: '提高定位准确度，出行更效率'
+          },
+          {
+            icon: 'el-icon-camera',
+            check: true,
+            title: '相机权限',
+            subtitle: '提供拍照上传头像服务'
+          },
+          {
+            icon: 'el-icon-phone-outline',
+            check: true,
+            title: '电话权限',
+            subtitle: '方便司乘实时沟通，保障优质服务'
+          },
+          {
+            icon: 'el-icon-document',
+            check: true,
+            title: '存储权限',
+            subtitle: '访问本地照片，更改用户头像'
+          },
+        ]
+)
 </script>
 
 <template>
-  <img alt="Vue logo" style="width: 300px" src="./assets/shuanghua.jpeg" />
-  <h1>振作起来！❤️霜花❤️</h1>
+  <div class="container">
+    <div v-for="item in list" class="list">
+      <i :class="item.icon"></i>
+      <div class="title-container">
+        <div class="title">{{item.title}}</div>
+        <div class="subtitle">{{item.subtitle}}</div>
+      </div>
+      <el-switch
+  v-model="item.check"
+  active-color="#13ce66"
+  inactive-color="#ff4949">
+</el-switch>
+    </div>
+    <div class="btn-container">
+      <el-button type="info">拒绝</el-button>
+      <el-button type="info">拒绝</el-button>
+    </div>
+  </div>
   <!-- <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
 </template>
 
 <style>
+body {
+  height: 100%;
+  background: #eeeeff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -21,5 +78,30 @@ import HelloWorld from './components/HelloWorld.vue'
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.container {
+  width: 300px;
+  background: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+.list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+i {
+  font-size: 30px;
+  margin-right: 10px
+}
+.title-container {
+/*   margin-right: 60px; */
+}
+.el-switch {
+  margin-left: auto;
+}
+.btn-container {
+  display: flex;
+  justify-content: space-around;
 }
 </style>
