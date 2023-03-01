@@ -5,31 +5,31 @@ import { ref } from 'vue';
 import HelloWorld from './components/HelloWorld.vue'
 const list = ref( [
           {
-            icon: 'el-icon-microphone',
+            icon: 'Microphone',
             check: true,
             title: '语音权限',
             subtitle: '紧急情况，录音取证'
           },
           {
-            icon: 'el-icon-map-location',
+            icon: 'MapLocation',
             check: true,
             title: '位置权限',
             subtitle: '提高定位准确度，出行更效率'
           },
           {
-            icon: 'el-icon-camera',
+            icon: 'Camera',
             check: true,
             title: '相机权限',
             subtitle: '提供拍照上传头像服务'
           },
           {
-            icon: 'el-icon-phone-outline',
+            icon: 'Phone',
             check: true,
             title: '电话权限',
             subtitle: '方便司乘实时沟通，保障优质服务'
           },
           {
-            icon: 'el-icon-document',
+            icon: 'Document',
             check: true,
             title: '存储权限',
             subtitle: '访问本地照片，更改用户头像'
@@ -41,7 +41,7 @@ const list = ref( [
 <template>
   <div class="container">
     <div v-for="item in list" class="list">
-      <i :class="item.icon"></i>
+      <el-icon size="30"><component :is="item.icon"/></el-icon>
       <div class="title-container">
         <div class="title">{{item.title}}</div>
         <div class="subtitle">{{item.subtitle}}</div>
@@ -95,6 +95,7 @@ i {
   margin-right: 10px
 }
 .title-container {
+  text-align: left;
 /*   margin-right: 60px; */
 }
 .el-switch {
