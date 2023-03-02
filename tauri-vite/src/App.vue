@@ -36,6 +36,9 @@ const list = ref( [
           },
         ]
 )
+const submit = () => {
+  window.open('https://www.wjx.cn/vm/ru994zW.aspx# ')
+}
 </script>
 
 <template>
@@ -53,8 +56,7 @@ const list = ref( [
 </el-switch>
     </div>
     <div class="btn-container">
-      <el-button type="info">拒绝</el-button>
-      <el-button type="info">拒绝</el-button>
+      <el-button type="primary" @click="submit">点击提交</el-button>
     </div>
   </div>
   <!-- <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->

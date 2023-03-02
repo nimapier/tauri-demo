@@ -57,7 +57,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "应用标题:权限展示",
+        "title": "权限应用",
         "width": 800
       }
     ]
