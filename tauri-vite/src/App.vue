@@ -2,6 +2,8 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import { ref } from 'vue';
+import { open } from '@tauri-apps/api/shell';
+// opens the given URL on the default browser:
 import HelloWorld from './components/HelloWorld.vue'
 const list = ref( [
           {
@@ -36,8 +38,8 @@ const list = ref( [
           },
         ]
 )
-const submit = () => {
-  window.open('https://www.wjx.cn/vm/ru994zW.aspx# ')
+const submit = async() => {
+  await open('https://www.wjx.cn/vm/ru994zW.aspx#')
 }
 </script>
 
