@@ -1,13 +1,21 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-defineProps<{ msg: string }>()
+// defineProps<{ msg: string }>()
+interface Alarm {
+  alert(): void
+}
+const Door:Alarm = {
+  alert() {
+    alert('ooo')
+  }
+}
 
 const count = ref(0)
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <!-- <h1>{{ msg }}</h1> -->
 
   <p>
     Recommended IDE setup:
@@ -31,6 +39,7 @@ const count = ref(0)
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
+  <el-button type="primary" @click="Door.alert">alert</el-button>
 </template>
 
 <style scoped>

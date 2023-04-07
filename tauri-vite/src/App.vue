@@ -3,9 +3,11 @@
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import { ref } from 'vue';
 import { open } from '@tauri-apps/api/shell';
+import { useRouter } from 'vue-router'
+const router = useRouter()
 // opens the given URL on the default browser:
-import HelloWorld from './components/HelloWorld.vue'
-const list = ref( [
+// import HelloWorld from './components/HelloWorld.vue'
+const lists:AuthObj[] = [
           {
             icon: 'Microphone',
             check: true,
@@ -37,9 +39,14 @@ const list = ref( [
             subtitle: '访问本地照片，更改用户头像'
           },
         ]
+const list = ref(
+  lists
 )
 const submit = async() => {
   await open('https://www.wjx.cn/vm/ru994zW.aspx#')
+}
+const jump = () => {
+  router.push({name: 'helloWorld'})
 }
 </script>
 
@@ -59,6 +66,7 @@ const submit = async() => {
     </div>
     <div class="btn-container">
       <el-button type="primary" @click="submit">点击提交</el-button>
+      <el-button @click="jump">TS</el-button>
     </div>
   </div>
   <!-- <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
